@@ -21,7 +21,7 @@
 
 #### 基础算法 
 ##### 1. 字符串
-- [x] 反转字符串中的单词Ⅲ 557
+- [x] 反转字符串中的单词Ⅲ [557](https://github.com/qlypupil/myStudy/blob/master/leetcode/code/string/lesson1-leetcode-557.js)
 - [ ] 计算二进制字符串
 ##### 2. 数组
 - [ ] 电话号码的组合
