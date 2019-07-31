@@ -1,3 +1,4 @@
+
 #### git remote 查看远程仓库名 默认是 origin
 
 ```
@@ -109,7 +110,7 @@
 >常用的步骤
 >    - 1.1  git fetch orign master  //将远程仓库的master分支下载本地当前branch中
 >     - 1.2  git log -p master ..origin/master //比较本地的master分支和origin/master分支的差别
->     - 1.3  git merge origin/master //进行合并
+>     - 1.3  git merge origin/master //进行合并  
 或者使用下面的步骤
 >     - 1.1  git fetch origin master:tmp //从远程仓库master分支获取最新，在本地建立tmp分支
 >     - 1.2  git diff tmp //将当前分支和tmp对比
