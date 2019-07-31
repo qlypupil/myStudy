@@ -1,4 +1,22 @@
 
+<!-- TOC depthFrom:1 depthTo:6 orderedList:false -->
+
+- [git remote 查看远程仓库名 默认是 origin](#git-remote-%E6%9F%A5%E7%9C%8B%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E5%90%8D-%E9%BB%98%E8%AE%A4%E6%98%AF-origin)
+- [git remote -v 列出详细信息，在每一个名字后面列出其远程url](#git-remote--v-%E5%88%97%E5%87%BA%E8%AF%A6%E7%BB%86%E4%BF%A1%E6%81%AF%E5%9C%A8%E6%AF%8F%E4%B8%80%E4%B8%AA%E5%90%8D%E5%AD%97%E5%90%8E%E9%9D%A2%E5%88%97%E5%87%BA%E5%85%B6%E8%BF%9C%E7%A8%8Burl)
+- [git remote show origin 显示远程仓库信息](#git-remote-show-origin-%E6%98%BE%E7%A4%BA%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E4%BF%A1%E6%81%AF)
+- [可以在 .git/config 文件中(隐藏文件)查看 相关信息](#%E5%8F%AF%E4%BB%A5%E5%9C%A8-gitconfig-%E6%96%87%E4%BB%B6%E4%B8%AD%E9%9A%90%E8%97%8F%E6%96%87%E4%BB%B6%E6%9F%A5%E7%9C%8B-%E7%9B%B8%E5%85%B3%E4%BF%A1%E6%81%AF)
+- [常用命令](#%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4)
+- [clone步骤](#clone%E6%AD%A5%E9%AA%A4)
+- [本地切换新分支步骤](#%E6%9C%AC%E5%9C%B0%E5%88%87%E6%8D%A2%E6%96%B0%E5%88%86%E6%94%AF%E6%AD%A5%E9%AA%A4)
+- [新建分支步骤](#%E6%96%B0%E5%BB%BA%E5%88%86%E6%94%AF%E6%AD%A5%E9%AA%A4)
+- [删除分支步骤](#%E5%88%A0%E9%99%A4%E5%88%86%E6%94%AF%E6%AD%A5%E9%AA%A4)
+- [git fetch 和 git pull 区别](#git-fetch-%E5%92%8C-git-pull-%E5%8C%BA%E5%88%AB)
+- [提交步骤](#%E6%8F%90%E4%BA%A4%E6%AD%A5%E9%AA%A4)
+- [git add 撤销步骤(只是 git add)](#git-add-%E6%92%A4%E9%94%80%E6%AD%A5%E9%AA%A4%E5%8F%AA%E6%98%AF-git-add)
+- [git add之后又git commit 撤销步骤](#git-add%E4%B9%8B%E5%90%8E%E5%8F%88git-commit-%E6%92%A4%E9%94%80%E6%AD%A5%E9%AA%A4)
+- [小提示](#%E5%B0%8F%E6%8F%90%E7%A4%BA)
+
+<!-- /TOC -->
 #### git remote 查看远程仓库名 默认是 origin
 
 ```
