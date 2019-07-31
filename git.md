@@ -84,8 +84,8 @@
 5. git checkout -- a.js 丢弃本地文件的改动，多个文件逗号隔开
 
 #### clone步骤
-1. git clone [git@github.com:qlypupil/myStudy.git] 从远程 clone 代码，默认 master 分支。
-2. git checkout daily/0.0.1 如果已有分支，切换到你想要的分支
+> 1. git clone [git@github.com:qlypupil/myStudy.git](git@github.com:qlypupil/myStudy.git) 从远程 clone 代码，默认 master 分支。
+> 2. git checkout daily/0.0.1 如果已有分支，切换到你想要的分支
 
 #### 本地切换新分支步骤
 > 1. git pull origin daily/0.0.1
