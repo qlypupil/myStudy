@@ -107,8 +107,9 @@
 > 2. git checkout daily/0.0.1 如果已有分支，切换到你想要的分支
 
 #### 本地切换新分支步骤
-> 1. git pull origin daily/0.0.1
-> 2. git checkout daily/0.0.2
+> 1. 获取并更新远程的全部代码到本地 git fetch -all
+> 2. git pull origin daily/0.0.1
+> 3. git checkout daily/0.0.2
 
 #### 新建分支步骤
 > 1. git checkout -b daily/0.0.2 新增并切换到当前分支
