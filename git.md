@@ -7,6 +7,7 @@
 - [可以在 .git/config 文件中(隐藏文件)查看 相关信息](#%E5%8F%AF%E4%BB%A5%E5%9C%A8-gitconfig-%E6%96%87%E4%BB%B6%E4%B8%AD%E9%9A%90%E8%97%8F%E6%96%87%E4%BB%B6%E6%9F%A5%E7%9C%8B-%E7%9B%B8%E5%85%B3%E4%BF%A1%E6%81%AF)
 - [常用命令](#%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4)
 - [clone步骤](#clone%E6%AD%A5%E9%AA%A4)
+- [下载clone指定分支tag的代码]
 - [本地切换新分支步骤](#%E6%9C%AC%E5%9C%B0%E5%88%87%E6%8D%A2%E6%96%B0%E5%88%86%E6%94%AF%E6%AD%A5%E9%AA%A4)
 - [新建分支步骤](#%E6%96%B0%E5%BB%BA%E5%88%86%E6%94%AF%E6%AD%A5%E9%AA%A4)
 - [删除分支步骤](#%E5%88%A0%E9%99%A4%E5%88%86%E6%94%AF%E6%AD%A5%E9%AA%A4)
@@ -105,6 +106,10 @@
 #### clone步骤
 > 1. git clone [git@github.com:qlypupil/myStudy.git](git@github.com:qlypupil/myStudy.git) 从远程 clone 代码，默认 master 分支。
 > 2. git checkout daily/0.0.1 如果已有分支，切换到你想要的分支
+
+#### 下载clone指定分支tag的代码
+命令：git clone --branch [tags标签] [git地址] 或者 git clone --b [tags标签] [git地址]
+例如：git clone -b 1.4.1 https://github.com/jumpserver/coco.git
 
 #### 本地切换新分支步骤
 > 1. 获取并更新远程的全部代码到本地 git fetch -all
