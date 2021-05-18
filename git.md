@@ -108,8 +108,8 @@
 > 2. git checkout daily/0.0.1 如果已有分支，切换到你想要的分支
 
 #### 下载clone指定分支tag的代码
-命令：git clone --branch [tags标签] [git地址] 或者 git clone --b [tags标签] [git地址]
-例如：git clone -b 1.4.1 https://github.com/jumpserver/coco.git
+> 1. 命令：git clone --branch [tags标签] [git地址] 或者 git clone --b [tags标签] [git地址]
+> 2. 例如：git clone -b 1.4.1 https://github.com/jumpserver/coco.git
 
 #### 本地切换新分支步骤
 > 1. 获取并更新远程的全部代码到本地 git fetch -all
