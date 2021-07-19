@@ -25,7 +25,13 @@ export function lifecycleMiXin(Vue) {
   // 把_update挂载在Vue的原型
   Vue.prototype._update = function (vnode) {
     const vm = this;
-    // path 是渲染vnode到真实dom核心
-    patch(vm.$el, vnode);
+    const prevVnode = vm._vnode; //保留上一次的vnode
+    vm._vnode = vnode;
+    if (!prevVnode) {
+      // path 是渲染vnode到真实dom核心
+      vm.$el = patch(vm.$el, vnode); // 初次渲染 vm._vnode肯定不存在，要通过虚拟节点渲染出真实的dom，赋值给$el属性
+    } else {
+      vm.$el = patch(prevVnode, vnode);
+    }
   };
 }

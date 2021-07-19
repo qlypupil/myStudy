@@ -1,6 +1,6 @@
 import { initMixin } from './init';
-import { lifecycleMiXin } from './lifecycle'
-import { renderMiXin } from './render'
+import { lifecycleMiXin } from './lifecycle';
+import { renderMiXin } from './render';
 
 // Vue就是一个构造函数，通过new关键字进行实例化
 function Vue(options) {

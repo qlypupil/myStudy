@@ -7,10 +7,10 @@ export default class Dep {
     this.id = id++;
     this.subs = []; // 这个是存放watcher的容器
   }
-  
+
   depend() {
     // 如果当前存在watcher
-    if(Dep.target) {
+    if (Dep.target) {
       Dep.target.addDep(this); // 把自身--dep实例存放在watcher里面
     }
   }
@@ -40,6 +40,5 @@ export function pushTarget(watcher) {
 
 export function popTarget() {
   targetStack.pop(); // 当前watcher出栈，拿到上一个watcher
-  Dep.target = targetStack[targetStack.length - 1]
+  Dep.target = targetStack[targetStack.length - 1];
 }
-
