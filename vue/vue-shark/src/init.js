@@ -1,6 +1,7 @@
 import { initState } from './state';
 import { compileToFunctions } from './compiler/index';
-import { mountComponent } from './lifecycle';
+import { callHook, mountComponent } from './lifecycle';
+import { mergeOptions } from './util';
 
 export function initMixin(Vue) {
   Vue.prototype._init = function (options) {
@@ -45,3 +46,19 @@ Vue.prototype.$mount = function (el) {
   // 将当前组件的实例挂载到真实的el节点上面
   return mountComponent(vm, el);
 };
+
+Vue.prototype._init = function(options) {
+  const vm = this;
+  // 这里的this代表调用_init方法的对象（实例对象）
+  // this.$options 就是用户 new Vue的时候传入的属性和全局的Vue.options合并之后的结果
+
+  vm.$options = mergeOptions(vm.constructor.options, options)
+  callHook(vm, 'beforeCreate'); // 初始化数据之前
+  // 初始化状态
+  initState(vm);
+  callHook(vm , 'created'); // 初始化数据之后
+  // 如果有el属性，进行模板渲染
+  if(vm.$options.el) {
+    vm.$mount(vm.$options.el);
+  }
+}
