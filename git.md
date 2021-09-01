@@ -12,6 +12,12 @@
 - [新建分支步骤](#%E6%96%B0%E5%BB%BA%E5%88%86%E6%94%AF%E6%AD%A5%E9%AA%A4)
 - [删除分支步骤](#%E5%88%A0%E9%99%A4%E5%88%86%E6%94%AF%E6%AD%A5%E9%AA%A4)
 - [git fetch 和 git pull 区别](#git-fetch-%E5%92%8C-git-pull-%E5%8C%BA%E5%88%AB)
+- [暂存本地文件，拉取远程代码](#%E6%9A%82%E5%AD%98%E6%9C%AC%E5%9C%B0%E6%96%87%E4%BB%B6%E6%8B%89%E5%8F%96%E8%BF%9C%E7%A8%8B%E4%BB%A3%E7%A0%81)
+- [扩展 git stash](#%E6%89%A9%E5%B1%95-git-stash)
+  - [git stash pop [--index] [stash_id]](#git-stash-pop---index-stash_id)
+  - [git stash apply [--index] [stash_id]](#git-stash-apply---index-stash_id)
+  - [git stash drop [stash_id]](#git-stash-drop-stash_id)
+  - [git stash clear](#git-stash-clear)
 - [提交步骤](#%E6%8F%90%E4%BA%A4%E6%AD%A5%E9%AA%A4)
 - [git pull 之后撤销步骤](#git-pull-%E4%B9%8B%E5%90%8E%E6%92%A4%E9%94%80%E6%AD%A5%E9%AA%A4)
 - [git add 撤销步骤只是 git add](#git-add-%E6%92%A4%E9%94%80%E6%AD%A5%E9%AA%A4%E5%8F%AA%E6%98%AF-git-add)
@@ -145,6 +151,45 @@
 >    - 1.4  `git branch -d temp`&emsp;删除分支temp
 > 2. `git pull`相当于从远程获取最新版本并merge到本地
 tip: 在实际使用中，`git fetch`更安全一些。
+
+#### 暂存本地文件，拉取远程代码
+写代码时，忘记`git pull`远程分支，直接写，当想再次`git pull`时，提示`error: Your local changes to the following files would be overwritten by merge:`
+
+两种方式（根据需求选择）：
+
+1.  保留本地修改
+    - `git stash`&emsp;保存当前工作进度
+    - `git pull origin master`&emsp;拉取远程代码
+    - `git stash pop`&emsp;恢复最近的进度到工作区
+2. 不保留本地修改
+    - `git reset --hard`&emsp;完全覆盖本地代码，采用最近一版的服务端代码
+    - `git pull origin master`&emsp;拉取代码
+
+#### 扩展 git stash
+
+`git stash`&emsp;保存当前工作进度，也可以使用 `git stash save 'message'` 添加一些注释
+
+`git stash list`&emsp;显示保存进度的列表
+
+##### git stash pop [--index] [stash_id]
+通过 `git stash pop` 命令恢复进度后，会删除当前进度 
+
+`git stash pop`&emsp;恢复最新的进度到工作区。（ `git` 会默认把工作区和暂存区的改动都恢复到工作区
+
+`git stash pop --index`&emsp;恢复最新的进度到工作区和暂存区。（尝试将原来暂存区的改动还恢复到暂存区）
+
+`git stash pop stash@{n}`&emsp;恢复指定的进度到工作区，`stash_id` 是通过 `git stash list` 命令得到的
+
+##### git stash apply [--index] [stash_id]
+除了不删除恢复的进度外，其余和 `git stash pop` 命令一样
+
+##### git stash drop [stash_id]
+删除一个存储的进度，如果不指定 `stash_id`，会默认删除最新的进度
+
+##### git stash clear
+删除所有存储的进度
+
+
 
 #### 提交步骤
 > 1. 提交前本地先拉取 `git pull origin master`
