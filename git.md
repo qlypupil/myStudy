@@ -124,6 +124,7 @@
 > 3. `git checkout daily/0.0.2`
 
 #### 新建分支步骤
+> git checkout -b yourbranchname origin/oldbranchname
 > 1. `git checkout -b daily/0.0.2`&emsp; 新增并切换到当前分支
 > 2. `git push --set-upstream origin daily/0.0.2`&emsp; 追踪新分支提交
 
